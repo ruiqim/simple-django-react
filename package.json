@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js"
+    "flush": "python ./backend/manage.py flush --no-input",
+    "e2e": "cypress open --project ./backend/frontend/",
+    "dev": "webpack --mode development ./backend/frontend/src/index.js --output ./backend/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./backend/frontend/src/index.js --output ./backend/frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +19,11 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cypress": "^2.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "shortid": "^2.2.8",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3"
   }
